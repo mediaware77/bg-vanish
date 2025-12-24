@@ -1,5 +1,7 @@
 # RemoveBG
 
+![Screenshot da aplicação](imagem.png)
+
 Aplicacao web para remocao de fundo e corte de imagens, processando 100% no navegador.
 
 ## Funcionalidades
