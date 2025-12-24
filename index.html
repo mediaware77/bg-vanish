@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Fundo de Imagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Remover Fundo de Imagem</h1>
+
+        <div class="upload-section">
+            <label for="imageInput" class="file-label">
+                Selecionar Imagem (JPG/PNG)
+            </label>
+            <input type="file" id="imageInput" accept="image/jpeg,image/png" hidden>
+            <span id="fileName" class="file-name">Nenhum arquivo selecionado</span>
+        </div>
+
+        <button id="removeBtn" class="btn-remove" disabled>
+            Remover BG
+        </button>
+
+        <button id="cropBtn" class="btn-crop hidden">
+            Recortar Imagem
+        </button>
+
+        <div id="cropToolbar" class="crop-toolbar hidden">
+            <div class="crop-target-selector">
+                <label>
+                    <input type="radio" name="cropTarget" value="original" checked>
+                    Original
+                </label>
+                <label id="cropResultLabel" class="hidden">
+                    <input type="radio" name="cropTarget" value="result">
+                    Resultado
+                </label>
+            </div>
+
+            <div class="aspect-ratio-buttons">
+                <button class="aspect-btn active" data-ratio="free">Livre</button>
+                <button class="aspect-btn" data-ratio="1:1">1:1</button>
+                <button class="aspect-btn" data-ratio="4:3">4:3</button>
+                <button class="aspect-btn" data-ratio="16:9">16:9</button>
+                <button class="aspect-btn" data-ratio="16:7">16:7</button>
+            </div>
+
+            <div class="crop-actions">
+                <button id="applyCropBtn" class="btn-apply-crop">Aplicar Recorte</button>
+                <button id="cancelCropBtn" class="btn-cancel-crop">Cancelar</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processando imagem...</p>
+        </div>
+
+        <div class="images-container">
+            <div class="image-box">
+                <h3>Original</h3>
+                <div class="image-preview" id="originalPreview">
+                    <p class="placeholder">Imagem original aparecerá aqui</p>
+                </div>
+            </div>
+
+            <div class="image-box">
+                <h3>Sem Fundo</h3>
+                <div class="image-preview" id="resultPreview">
+                    <p class="placeholder">Resultado aparecerá aqui</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="downloadBtn" class="btn-download hidden">
+            Baixar Imagem
+        </button>
+
+        <button id="resetBtn" class="btn-reset hidden">
+            Reiniciar
+        </button>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
